@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos Recomendados pela TriboTT</title>
+    <meta name="description" content="Produtos testados e aprovados pela TriboTT. Nossa curadoria de equipamentos essenciais para triatletas e entusiastas de esportes de resistência.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --azul: #052A40;
+            --bege: #D9BCA5;
+            --laranja: #F26631;
+            --branco: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--azul) 0%, #063d5a 100%);
+            color: var(--branco);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-top: 40px;
+        }
+
+        h1 {
+            font-family: 'Syne', sans-serif;
+            font-size: 2.5rem;
+            color: var(--laranja);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--bege);
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Categories */
+        .category-section {
+            margin-bottom: 60px;
+        }
+
+        .category-title {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            color: var(--bege);
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--laranja);
+            display: inline-block;
+        }
+
+        /* Product Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        /* Product Card */
+        .product-card {
+            background: var(--branco);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(242, 102, 49, 0.4);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-image.placeholder {
+            color: #999;
+            font-size: 14px;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .product-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .product-name {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            color: var(--azul);
+            margin-bottom: 15px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+        .buy-button {
+            font-family: 'Work Sans', sans-serif;
+            background: var(--laranja);
+            color: var(--branco);
+            border: none;
+            padding: 14px 24px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .buy-button:hover {
+            background: #d45528;
+            transform: scale(1.05);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--bege);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--laranja);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+
+            .category-title {
+                font-size: 1.5rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Produtos Recomendados pela TriboTT</h1>
+            <p class="subtitle">Produtos testados e aprovados pela TriboTT. Nossa curadoria de equipamentos essenciais para triatletas e entusiastas de esportes de resistência.</p>
+        </header>
+
+        <!-- NUTRIÇÃO -->
+        <section class="category-section">
+            <h2 class="category-title">Nutrição</h2>
+            <div class="products-grid" id="nutricao-grid"></div>
+        </section>
+
+        <!-- EQUIPAMENTOS -->
+        <section class="category-section">
+            <h2 class="category-title">Equipamentos</h2>
+            <div class="products-grid" id="equipamentos-grid"></div>
+        </section>
+
+        <!-- MAGAZINAGEM -->
+        <section class="category-section">
+            <h2 class="category-title">Magazinagem</h2>
+            <div class="products-grid" id="magazinagem-grid"></div>
+        </section>
+
+        <!-- ACESSÓRIOS -->
+        <section class="category-section">
+            <h2 class="category-title">Acessórios</h2>
+            <div class="products-grid" id="acessorios-grid"></div>
+        </section>
+
+        <footer>
+            <p>TriboTT - Tecnologia no Esporte | <a href="https://tribott.com.br" target="_blank">tribott.com.br</a></p>
+            <p style="margin-top: 10px; font-size: 0.85rem;">Esta página contém links de afiliado. Ao comprar através destes links, você ajuda a manter o conteúdo da TriboTT.</p>
+        </footer>
+    </div>
+
+    <!-- Carrega os dados dos produtos -->
+    <script src="produtos-data.js"></script>
+    
+    <!-- Script que monta a página automaticamente -->
+    <script>
+        function criarCardProduto(produto) {
+            const card = document.createElement('div');
+            card.className = 'product-card';
+            
+            // Verifica se a imagem existe
+            const imagemHTML = produto.imagem.includes('placeholder') 
+                ? `<div class="product-image placeholder">${produto.nome}</div>`
+                : `<div class="product-image"><img src="${produto.imagem}" alt="${produto.nome}" onerror="this.parentElement.innerHTML='<div class=\\'placeholder\\'>${produto.nome}</div>'"></div>`;
+            
+            card.innerHTML = `
+                ${imagemHTML}
+                <div class="product-info">
+                    <h3 class="product-name">${produto.nome}</h3>
+                    <a href="${produto.link}" target="_blank" class="buy-button">Ver Preço e Comprar</a>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        // Monta cada categoria
+        function montarCategoria(categoria, gridId) {
+            const grid = document.getElementById(gridId);
+            produtos[categoria].forEach(produto => {
+                grid.appendChild(criarCardProduto(produto));
+            });
+        }
+
+        // Monta todas as categorias quando a página carregar
+        document.addEventListener('DOMContentLoaded', () => {
+            montarCategoria('nutricao', 'nutricao-grid');
+            montarCategoria('equipamentos', 'equipamentos-grid');
+            montarCategoria('magazinagem', 'magazinagem-grid');
+            montarCategoria('acessorios', 'acessorios-grid');
+        });
+    </script>
+</body>
+</html>
